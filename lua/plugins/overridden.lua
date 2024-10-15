@@ -3,7 +3,7 @@ return {
     "nvim-neo-tree/neo-tree.nvim",
     opts = {
       window = {
-        width = 50,
+        width = 40,
         position = "right"
       },
       filesystem = {
