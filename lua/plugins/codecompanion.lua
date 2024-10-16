@@ -23,10 +23,15 @@ return {
       anthropic = function()
         return require("codecompanion.adapters").extend("anthropic", {
           env = {
-            api_key = "cmd:op read op://private/anthropic/nvim-key --no-newline"
+            api_key = "cmd:op read op://private/anthropic/nvim-key --no-newline",
           },
         })
       end,
+    },
+    display = {
+      chat = {
+        intro_message = "Press ? for options.",
+      },
     },
   }
 }
