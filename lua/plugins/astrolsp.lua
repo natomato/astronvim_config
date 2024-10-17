@@ -1,9 +1,8 @@
-if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
-
 -- AstroLSP allows you to customize the features in AstroNvim's LSP configuration engine
 -- Configuration documentation can be found with `:h astrolsp`
--- NOTE: We highly recommend setting up the Lua Language Server (`:LspInstall lua_ls`)
---       as this provides autocomplete and documentation while editing
+
+local nvim_lsp = require('lspconfig')
+
 
 ---@type LazySpec
 return {
@@ -46,6 +45,11 @@ return {
     ---@diagnostic disable: missing-fields
     config = {
       -- clangd = { capabilities = { offsetEncoding = "utf-8" } },
+      denols = { root_dir = nvim_lsp.util.root_pattern("deno.json", "deno.jsonc"), },
+      ts_ls = {
+        root_dir = nvim_lsp.util.root_pattern("package.json"),
+        single_file_support = false,
+      },
     },
     -- customize how language servers are attached
     handlers = {
