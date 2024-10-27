@@ -31,4 +31,14 @@ return {
       top_down = false,
     },
   },
+  {
+    "nvim-telescope/telescope.nvim",
+    opts = {
+      defaults = {
+        file_ignore_patterns = {
+          "package%-lock.json",
+        },
+      },
+    },
+  },
 }
